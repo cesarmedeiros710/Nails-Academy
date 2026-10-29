@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nails Academy Studio de Unhas | Manicure e Nail Art em Cabedelo</title>
+<meta name="description" content="Manicure, esmaltação em gel e nail art personalizada no Nails Academy Studio de Unhas. Agende pelo WhatsApp.">
+<meta property="og:title" content="Nails Academy Studio de Unhas">
+<meta property="og:description" content="Manicure, esmaltação em gel e nail art personalizada. Agende pelo WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#" class="logo">Nails Academy</a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#galeria">Cores</a></li>
+      <li><a href="#estilos">Estilos</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#local">Localização</a></li>
+    </ul>
+    <a class="nav-cta" href="#agendar">Agendar horário</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-panel" id="mobilePanel">
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#local">Localização</a>
+    <a class="nav-cta" href="#agendar">Agendar horário</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Studio de unhas · Cabedelo</p>
+      <h1>Suas mãos merecem um acabamento <em>impecável</em></h1>
+      <p class="lead">Manicure de precisão, esmaltação em gel duradoura e nail art autoral, feitas sob medida pra sua rotina. Atendimento individual, sem pressa.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#agendar">Agendar pelo WhatsApp</a>
+        <a class="btn-secondary" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="accent-block" aria-hidden="true"></div>
+      <div class="photo-frame">
+        <!-- SUBSTITUIR: troque a "src" abaixo pela foto real do cliente (mão com o trabalho finalizado, boa luz natural, formato retrato). -->
+        <img src="images/espaco.webp" alt="Trabalho de manicure finalizado no Nails Academy Studio">
+      </div>
+      <span class="hero-badge">+200 clientes atendidas</span>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Sobre o studio</p>
+      <h2>Cuidado que começa antes do esmalte</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-item">
+        <h3>Higiene em primeiro lugar</h3>
+        <p>Instrumentos esterilizados a cada atendimento e materiais individuais, sem exceção.</p>
+      </div>
+      <div class="about-item">
+        <h3>Tempo pra cada detalhe</h3>
+        <p>Horários espaçados, sem encaixes apressados — cada procedimento no seu tempo certo.</p>
+      </div>
+      <div class="about-item">
+        <h3>Produtos de qualidade</h3>
+        <p>Esmaltes e géis selecionados por durabilidade e saúde da unha, não só pela cor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Serviços</p>
+      <h2>O que fazemos por aqui</h2>
+    </div>
+    <ul class="menu-list">
+      <li class="menu-row">
+        <span class="name">Manicure tradicional</span>
+        <span class="leader"></span>
+        <span class="price">R$ 35</span>
+      </li>
+      <li class="menu-row">
+        <span class="name">Esmaltação em gel</span>
+        <span class="leader"></span>
+        <span class="price">R$ 60</span>
+      </li>
+      <li class="menu-row">
+        <span class="name">Alongamento em fibra</span>
+        <span class="leader"></span>
+        <span class="price">R$ 120</span>
+      </li>
+      <li class="menu-row">
+        <span class="name">Spa das mãos</span>
+        <span class="leader"></span>
+        <span class="price">R$ 45</span>
+      </li>
+      <li class="menu-row">
+        <span class="name">Nail art personalizada</span>
+        <span class="leader"></span>
+        <span class="price">a partir de R$ 15</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="galeria" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Galeria de tons</p>
+      <h2>Alguns dos nossos esmaltes favoritos</h2>
+    </div>
+      <div class="carousel">
+      <button class="carousel-btn carousel-prev" id="galeriaPrev" type="button" aria-label="Ver tons anteriores">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-track" id="galeriaTrack" tabindex="0" role="group" aria-label="Galeria de tons de esmalte — arraste para o lado para ver mais">
+
+        <button class="nail-card" type="button" data-kind="cor" 
+          data-name="Vinho Profundo"
+          data-desc="Tom intenso e sofisticado, perfeito pra quem quer um acabamento marcante sem perder a elegância."
+          data-img="images/nailcolor_vinho.webp">
+          <div class="nail-chip" style="background:linear-gradient(160deg,#8C3A50,#4E1B2B)"></div>
+          <p>Vinho Profundo</p>
+          <span class="see-more">Ver fotos</span>
+        </button>
+        <button class="nail-card" type="button" data-kind="cor" 
+          data-name="Nude Cerâmica"
+          data-desc="Clássico atemporal, combina com qualquer produção e disfarça o crescimento entre as manutenções."
+          data-img="https://placehold.co/640x480/C79A4E/2A1B22?font=montserrat&text=Foto+real:+Nude+Cer%C3%A2mica">
+          <div class="nail-chip" style="background:linear-gradient(160deg,#E4C9A6,#C79A4E)"></div>
+          <p>Nude Cerâmica</p>
+          <span class="see-more">Ver fotos</span>
+        </button>
+        <button class="nail-card" type="button" data-kind="cor" 
+          data-name="Dourado Fosco"
+          data-desc="Um brilho contido, ótimo pra ocasiões especiais sem parecer exagerado no dia a dia."
+          data-img="https://placehold.co/640x480/8A6428/FBF6EE?font=montserrat&text=Foto+real:+Dourado+Fosco">
+          <div class="nail-chip" style="background:linear-gradient(160deg,#C79A4E,#8A6428)"></div>
+          <p>Dourado Fosco</p>
+          <span class="see-more">Ver fotos</span>
+        </button>
+        <button class="nail-card" type="button" data-kind="cor" 
+          data-name="Marfim Perolado"
+          data-desc="Leve e delicado, com um leve efeito perolado que aparece sob luz natural."
+          data-img="https://placehold.co/640x480/E4C9A6/2A1B22?font=montserrat&text=Foto+real:+Marfim+Perolado">
+          <div class="nail-chip" style="background:linear-gradient(160deg,#F3E7D6,#E4C9A6)"></div>
+          <p>Marfim Perolado</p>
+          <span class="see-more">Ver fotos</span>
+        </button>
+        <button class="nail-card" type="button" data-kind="cor" 
+          data-name="Borgonha Metálico"
+          data-desc="Vinho com um toque metalizado — pedido certo pra quem gosta de um destaque a mais."
+          data-img="https://placehold.co/640x480/6E2135/FBF6EE?font=montserrat&text=Foto+real:+Borgonha+Met%C3%A1lico">
+          <div class="nail-chip" style="background:linear-gradient(160deg,#A14A5E,#6E2135)"></div>
+          <p>Borgonha Metálico</p>
+          <span class="see-more">Ver fotos</span>
+        </button>
+        <button class="nail-card" type="button" data-kind="cor" 
+          data-name="Café Escuro"
+          data-desc="Neutro e versátil, com uma profundidade que fica ótima em unhas curtas ou compridas."
+          data-img="images/nailcolor_cafe.webp">
+          <div class="nail-chip" style="background:linear-gradient(160deg,#5C2436,#2A1B22)"></div>
+          <p>Café Escuro</p>
+        </div>
+    <button class="carousel-btn carousel-next" id="galeriaNext" type="button" aria-label="Ver mais tons">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+<p class="carousel-hint">Arraste para o lado para ver todos os tons</p>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="estilos" >
+    <div class="container">
+    <div class="section-head">
+      <p class="kicker">Galeria de estilos</p>
+      <h2>Escolha o formato da sua unha</h2>
+      <p class="section-sub">Cada formato valoriza um tipo de mão e um estilo de vida diferente. Toque pra ver como fica na prática.</p>
+    </div>
+    <div class="shape-grid">
+      <button class="nail-card" type="button" data-kind="formato"
+        data-name="Amendoada"
+        data-desc="Ponta arredondada e afilada, lembrando uma amêndoa. Alonga visualmente os dedos e é resistente no dia a dia — o formato mais pedido de todos."
+        data-img="https://placehold.co/640x480/7C2D42/FBF6EE?font=montserrat&text=Foto+real:+Amendoada">
+        <img class="shape shape-almond" src="images/amendoada.png" alt="Unha lixada em formato amendoado">
+        <p>Amendoada</p>
+        <span class="see-more">Ver fotos</span>
+      </button>
+      <button class="nail-card" type="button" data-kind="formato"
+        data-name="Stiletto"
+        data-desc="Ponta fina e marcante, o formato mais ousado da cartela. Pede unhas mais compridas e um pouco mais de cuidado no dia a dia."
+        data-img="https://placehold.co/640x480/4E1B2B/FBF6EE?font=montserrat&text=Foto+real:+Stiletto">
+        <img class="shape shape-stiletto" src="images/stiletto.png" alt="Unha lixada em formato stiletto">
+        <p>Stiletto</p>
+        <span class="see-more">Ver fotos</span>
+      </button>
+      <button class="nail-card" type="button" data-kind="formato"
+        data-name="Bailarina"
+        data-desc="Laterais retas e ponta reta, como uma sapatilha de ponta. Dá um ar moderno e alongado, sem a fragilidade da ponta fina."
+        data-img="https://placehold.co/640x480/B4863E/2A1B22?font=montserrat&text=Foto+real:+Bailarina">
+        <img class="shape shape-ballerina" src="images/bailarina.png" alt="Unha lixada em formato bailarina">
+        <p>Bailarina</p>
+        <span class="see-more">Ver fotos</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Depoimentos</p>
+      <h2>Quem já passou por aqui</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p class="quote">"Minhas unhas nunca duraram tanto tempo com o gel. Voltei porque o atendimento é calmo, sem correria."</p>
+        <p class="who">— Renata A.</p>
+      </div>
+      <div class="testimonial">
+        <p class="quote">"Marquei sem saber o que queria e saí com uma nail art que combinou exatamente com meu estilo."</p>
+        <p class="who">— Juliana M.</p>
+      </div>
+      <div class="testimonial">
+        <p class="quote">"Percebi a diferença na higiene logo na primeira vez. Hoje é o único lugar que confio pra fazer minhas unhas."</p>
+        <p class="who">— Carla S.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="local">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Localização</p>
+      <h2>Onde nos encontrar</h2>
+    </div>
+    <div class="local-grid">
+      <div class="local-info">
+        <p class="local-address">Rua Siqueira Campos, 57<br>Cabedelo - PB</p>
+        <p class="local-hours">Segunda a sábado · 9h às 19h</p>
+        <a class="btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=-6.975142976463658,-34.83464040025463" target="_blank" rel="noopener">Traçar rota</a>
+      </div>
+      <!-- SUBSTITUIR: troque as coordenadas em studioCoords (js/script.js) pelo endereço real da cliente -->
+      <div id="map" class="map-frame" role="application" aria-label="Mapa com a localização do Nails Academy Studio de Unhas"></div>
+    </div>
+  </div>
+</section>
+
+<section id="agendar" class="section-alt">
+  <div class="container">
+    <div class="cta-final">
+      <h2>Vamos marcar o seu horário?</h2>
+      <p>Responda em minutos pelo WhatsApp e escolha o dia que funciona melhor pra você.</p>
+      <a class="btn-primary" href="https://wa.me/5583991236614" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Nails Academy</p>
+        <p>Studio de unhas · Cabedelo, PB</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#local">Localização</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/5583991236614" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Nails Academy Studio de Unhas. Página de demonstração.</p>
+  </div>
+</footer>
+
+<dialog id="colorModal" aria-labelledby="modalTitle">
+  <button class="modal-close" id="modalClose" aria-label="Fechar">&times;</button>
+  <div class="modal-photo">
+    <img id="modalImg" src="" alt="">
+  </div>
+  <div class="modal-body">
+    <h3 id="modalTitle"></h3>
+    <p class="modal-desc" id="modalDesc"></p>
+    <div class="modal-actions">
+      <a class="btn-primary" id="modalCta" href="#" target="_blank" rel="noopener">Quero esse tom</a>
+    </div>
+  </div>
+</dialog>
+
+<a class="wa-float" href="https://wa.me/5583991236614" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2Z" stroke="white" stroke-width="1.4" fill="white" fill-opacity="0.08"/>
+    <path d="M8.7 7.6c.2-.45.4-.46.6-.47h.5c.16 0 .38-.06.6.46s.75 1.83.82 1.96c.06.13.1.29.02.47-.08.18-.13.29-.25.45-.13.16-.27.35-.38.47-.13.13-.26.27-.11.53.15.26.68 1.12 1.46 1.82.99.9 1.83 1.18 2.09 1.31.26.13.4.11.55-.07.15-.18.63-.73.8-.98.17-.25.34-.2.56-.12s1.44.68 1.68.8c.24.13.4.19.46.29.06.1.06.6-.14 1.18-.2.58-1.19 1.1-1.63 1.13-.44.03-.85.19-2.86-.6-2.42-.96-3.95-3.35-4.07-3.51-.12-.16-.98-1.3-.98-2.48 0-1.18.61-1.76.83-2z" fill="var(--wine, #7C2D42)"/>
+  </svg>
+</a>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
